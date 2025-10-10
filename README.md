@@ -16,6 +16,7 @@ It showcases a basic integration of a Qt GUI with TinyORM models using modern C+
 ## Prerequisites
 
 - C++ compiler
+- Windows 11 SDK
 - [CMake](https://cmake.org/)
 - [Conan2](https://conan.io/)
 
@@ -32,14 +33,13 @@ pip install conan
 2. **Set up a Conan profile** for your compiler and environment:
 
 ```
-conan profile new default --detect
-conan profile update settings.compiler.cppstd=17 default
+conan profile detect
 ```
 
 3. **Install dependencies** using Conan:
 
 ```
-conan install . --output-folder=build --build=missing
+conan install . --build=missing
 ```
 
 4. **Configure the project with CMake**:
@@ -51,7 +51,7 @@ cmake --preset conan-default
 5. **Build the project**:
 
 ```
-cmake --build --preset conan-default
+cmake --build --preset conan-release
 ```
 
 6. The executable will be available in the `build` directory.

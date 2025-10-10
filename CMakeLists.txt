@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.22)
-project(HelloTinyOrmQt LANGUAGES CXX)
+add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX _WIN32_WINNT=0x0A00 WINVER=0x0A00)
 
-add_compile_definitions(WIN32_LEAN_AND_MEAN NOMINMAX WIN32_WINNT=0x0A00)
+project(HelloTinyOrmQt LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(QT_DEPLOY_BIN_DIR "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
-include("${CMAKE_BINARY_DIR}/.qt/QtDeploySupport-Release.cmake")
+include("${CMAKE_BINARY_DIR}/.qt/QtDeploySupport-Release.cmake" OPTIONAL)
 
 # Qt via Conan
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
