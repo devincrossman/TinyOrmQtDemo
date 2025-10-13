@@ -3,6 +3,10 @@ qt/6.8.3
 range-v3/0.12.0
 tabulate/1.5
 
+[tool_requires]
+cmake/4.1.2
+ninja/1.13.1
+
 [generators]
 CMakeDeps
 CMakeToolchain
@@ -13,13 +17,40 @@ cmake_layout
 [options]
 qt/*:shared=True
 qt/*:qttools=True
-qt/*:qtdeclarative=False
 qt/*:with_sqlite=True
 qt/*:with_odbc=True
 qt/*:gui=True
 qt/*:widgets=True
 qt/*:sql=True
+qt/*:with_pcre2=True            # enable regex support
+qt/*:opengl=desktop
 qt/*:network=False
 qt/*:svg=False
-qt/*:opengl=desktop
-
+qt/*:qttranslations=False        # disable translations
+qt/*:with_freetype=False        # disable font rendering library unless you use complex text rendering
+qt/*:with_harfbuzz=False        # disable text shaping (not needed for basic Latin text)
+qt/*:with_fontconfig=False      # Linux-specific font discovery
+qt/*:with_glib=False            # disable GLib integration
+qt/*:with_doubleconversion=False # disable double<->string conversion lib, rarely needed directly
+qt/*:with_dbus=False            # disable D-Bus IPC system (Linux desktop only)
+qt/*:with_vulkan=False          # disable Vulkan support
+qt/*:with_openssl=False         # disable SSL/TLS (if not doing networking)
+qt/*:with_zstd=False            # disable Zstandard compression
+qt/*:with_zlib=False            # disable zlib (gzip compression)
+qt/*:with_jpeg=False            # disable JPEG image support
+qt/*:with_png=False             # disable PNG support (if you don't load images)
+qt/*:with_tiff=False            # disable TIFF support
+qt/*:with_webp=False            # disable WebP image support
+qt/*:with_brotli=False          # disable Brotli compression
+qt/*:with_libtiff=False         # same as above, redundancy
+qt/*:with_lcms2=False           # color management (disable if not doing image editing)
+qt/*:qtimageformats=False       # disable support for extra image formats
+qt/*:qtmultimedia=False         # disable multimedia framework
+qt/*:qtsvg=False                # disable SVG rendering
+qt/*:qtdeclarative=False        # disable QML/Quick
+qt/*:qtquick3d=False            # disable 3D/QML rendering
+qt/*:qtcharts=False             # disable chart module
+qt/*:qtserialport=False         # disable serial port API
+qt/*:qtshadertools=False        # disable shader tools
+qt/*:qtwayland=False            # disable Wayland backend
+qt/*:qtwebsockets=False         # disable WebSocket support

@@ -45,16 +45,18 @@ conan install . --build=missing
 4. **Configure the project with CMake**:
 
 ```
-cmake --preset conan-default
+cmake --preset app-config-base
 ```
 
 5. **Build the project**:
 
 ```
-cmake --build --preset conan-release
+cmake --build --preset app-debug
+or
+cmake --build --preset app-release
 ```
 
-6. The executable will be available in the `build` directory.
+6. The executable will be available in the `build` directory with the required QT and TinyORM dlls.
 
 ---
 

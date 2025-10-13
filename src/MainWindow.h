@@ -18,6 +18,7 @@ private slots:
 private:
     void setupTabs();
     void setupMenu();
+    void loadData();
 
     QTabWidget *tabWidget;
     QTableWidget *productsTable;
