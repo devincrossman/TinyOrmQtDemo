@@ -17,6 +17,7 @@ It showcases a basic integration of a Qt GUI with TinyORM models using modern C+
 
 - C++ compiler
 - Windows 11 SDK
+- QT 6.10 installed
 - [CMake](https://cmake.org/)
 - [Conan2](https://conan.io/)
 
