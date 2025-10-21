@@ -6,20 +6,32 @@
   "configurePresets": [
     {
       "name": "app-config-base",
+      "hidden": false,
+      "description": "Conan + Ninja Multi-Config",
+      "generator": "Ninja Multi-Config",
       "inherits": "conan-default"
     }
   ],
   "buildPresets": [
     {
-      "name": "app-RelWithDebInfo",
+      "name": "Debug",
       "configurePreset": "app-config-base",
-      "configuration": "RelWithDebInfo",
+      "description": "Build Debug",
+      "configuration": "Debug",
       "jobs": 4
     },
     {
-      "name": "app-Release",
+      "name": "Release",
       "configurePreset": "app-config-base",
+      "description": "Build Release",
       "configuration": "Release",
+      "jobs": 4
+    },
+    {
+      "name": "RelWithDebInfo",
+      "configurePreset": "app-config-base",
+      "description": "Build RelWithDebInfo",
+      "configuration": "RelWithDebInfo",
       "jobs": 4
     }
   ]
